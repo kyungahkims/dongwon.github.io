@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1">
+	<title>720x90</title>
+	<link rel="stylesheet" type="text/css" href="//img.mobon.net/Frtb/common/css/mobon_reset.css?201706292">
+	<script type="text/javascript" src="//img.mobon.net/Frtb/common/script/jquery.js"></script>
+	<script type="text/javascript" src="//img.mobon.net/js/mobonStorage.js"></script>
+	<!--[if lt IE 9]
+	<script type="text/javascript" src="//img.mobon.net/Frtb/common/script/respond.js"></script>
+	<![endif]-->
+	<!--[if lt IE 8]
+	<script type="text/javascript" src="//img.mobon.net/Frtb/common/script/html5.js"></script>
+	<script type="text/javascript" src="//img.mobon.net/Frtb/common/script/ie7.js"></script>
+	<link type="text/css" rel="stylesheet" href="//img.mobon.net/Frtb/common/css/ie7.css">
+	<![endif]-->
+	<script type="text/javascript" src="//img.mobon.net/newAd/common/webutil.js"></script>
+	<script type="text/javascript" src="//img.mobon.net/Frtb/js/frame_default_script_S.js"></script>
+	<!-- header END -->
+	<script type="text/javascript" src="//img.mobon.net/js/bounceRate.js"></script>
+	<link rel="stylesheet" type="text/css" href="//img.mobon.net/Frtb/css/frame_point.css">
+</head>
+<script>
+	$(document).ready(function () {
+		const classes = ['new', 'hot', 'up', 'down', 'hyphen'];
+		const classCounts = {
+			new: 0,
+			hot: 0,
+			up: 0,
+			down: 0,
+			hyphen: 0
+		};
+		const maxCount = 2;
+
+		$('ul li').find('.random').each(function () {
+			let randomClass;
+
+			do {
+				randomClass = classes[Math.floor(Math.random() * classes.length)];
+			} while (classCounts[randomClass] >= maxCount);
+
+			$(this).addClass(randomClass);
+			classCounts[randomClass]++;
+
+			if (randomClass === 'up' || randomClass === 'down') {
+				const randomNumber = Math.floor(Math.random() * 91) + 10;
+				$(this).append(`<span class="number">${randomNumber}</span>`);
+			}
+		});
+	});
+</script>
+<style>
+	/* font */
+	@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
+
+	/* Normalize */
+	* {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+	}
+
+	.mobon_reset {
+		display: flex;
+		width: 720px;
+		height: 90px;
+		font-family: Pretendard;
+		color: #000;
+		background-color: #fff;
+		overflow: hidden;
+	}
+
+	.mobon_reset .bg_wrap {
+		width: 250px;
+		background: linear-gradient(to bottom, #f3493c, #ff9100);
+		padding: 0 25px;
+	}
+
+	.bg_logo::before {
+		content: "";
+		width: 73px;
+		height: 27px;
+		display: block;
+		background: url('../img/logo-dwm-w.png') no-repeat center;
+		margin: 10px auto 7px;
+	}
+
+	/* search_wrap */
+	.search_wrap {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		width: 100%;
+		height: 28px;
+		font-size: 11px;
+		font-weight: 600;
+		border-radius: 20px;
+		border: 1px solid #fdb813;
+		background-color: #fff;
+		padding: 0 10px;
+	}
+
+	.search_wrap>span {
+		display: flex;
+		align-items: center;
+	}
+
+	.search_wrap>span::before {
+		content: "";
+		width: 34px;
+		height: 24px;
+		background: url('../img/logo-dw.png') no-repeat center/contain;
+		margin-right: 5px;
+	}
+
+	.search_wrap::after {
+		content: "";
+		width: 18px;
+		height: 18px;
+		background: url('../img/btn-s.png') no-repeat center/contain;
+	}
+
+	/* list_wrap */
+	.list_wrap {
+		display: flex;
+		justify-content: flex-start;
+		flex-wrap: wrap;
+		flex: 1;
+		border-bottom: 1px solid #f2f2f2;
+		border-right: 1px solid #f2f2f2;
+		margin: 9px 10px;
+	}
+
+	.list_wrap>li {
+		flex: 33.333%;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		border-top: 1px solid #f2f2f2;
+		cursor: pointer;
+	}
+
+	.list_wrap>li div {
+		display: flex;
+		align-items: center;
+		height: 100%;
+	}
+
+	.list_wrap strong {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		min-width: 23px;
+		height: 100%;
+		font-size: 10px;
+		font-weight: 600;
+		color: #fff;
+		background-color: #f90;
+		margin-right: 7px;
+		overflow: hidden;
+	}
+
+	.list_wrap .title {
+		display: -webkit-box;
+		font-size: 10px;
+		white-space: wrap;
+		-webkit-box-orient: vertical;
+		-webkit-line-clamp: 1;
+		overflow: hidden;
+	}
+
+	.random {
+		justify-content: center;
+		min-width: 25px;
+		font-size: 8px;
+		font-weight: 500;
+	}
+
+	.new::before {
+		content: "NEW";
+		color: #fdb813;
+	}
+
+	.hot::before {
+		content: "HOT";
+		color: #f08;
+	}
+
+	.up::before {
+		content: "";
+		width: 6px;
+		height: 5px;
+		background: url('../img/icon-up.png') no-repeat center;
+	}
+
+	.down::before {
+		content: "";
+		width: 6px;
+		height: 5px;
+		background: url('../img/icon-down.png') no-repeat center;
+	}
+
+	.hyphen::before {
+		content: "-";
+		font-size: 10px;
+		color: #aaa;
+	}
+
+	.number {
+		margin-left: 2px;
+	}
+</style>
+
+<body>
+	<div class="mobon_reset">
+		<div class="bg_wrap">
+			<div class="bg_logo">
+				<div class="search_wrap mobon_box click0">
+					<span>동원몰 실시간 추천 검색어</span>
+				</div>
+			</div>
+		</div>
+		<ul class="list_wrap">
+			<li class="mobon_box click0">
+				<div><strong>1</strong><span class="title"
+						title="샐러드/밀키트/샐러드/밀키트/샐러드/밀키트/샐러드/밀키트">샐러드/밀키트/샐러드/밀키트/샐러드/밀키트/샐러드/밀키트</span></div>
+				<div class="random"></div>
+			</li>
+			<li class="mobon_box click1">
+				<div><strong>2</strong><span class="title"
+						title="통조림/면류/통조림/면류/통조림/면류/통조림/면류">통조림/면류/통조림/면류/통조림/면류/통조림/면류</span></div>
+				<div class="random"></div>
+			</li>
+			<li class="mobon_box click2">
+				<div><strong>3</strong><span class="title" title="우유 및 유제품">우유 및 유제품</span></div>
+				<div class="random"></div>
+			</li>
+			<li class="mobon_box click3">
+				<div><strong>4</strong><span class="title" title="건강식품">건강식품</span></div>
+				<div class="random"></div>
+			</li>
+			<li class="mobon_box click4">
+				<div><strong>5</strong><span class="title" title="명절선물세트">명절선물세트</span></div>
+				<div class="random"></div>
+			</li>
+			<li class="mobon_box click5">
+				<div><strong>6</strong><span class="title" title="생활용품">생활용품</span></div>
+				<div class="random"></div>
+			</li>
+			<li class="mobon_box click5">
+				<div><strong>7</strong><span class="title" title="생활용품">생활용품</span></div>
+				<div class="random"></div>
+			</li>
+			<li class="mobon_box click5">
+				<div><strong>8</strong><span class="title" title="생활용품">생활용품</span></div>
+				<div class="random"></div>
+			</li>
+			<li class="mobon_box click5">
+				<div><strong>9</strong><span class="title" title="생활용품">생활용품</span></div>
+				<div class="random"></div>
+			</li>
+		</ul>
+	</div>
+</body>
+
+</html>
