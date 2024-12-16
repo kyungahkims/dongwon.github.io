@@ -23,35 +23,6 @@
 	<script type="text/javascript" src="//img.mobon.net/js/bounceRate.js"></script>
 	<link rel="stylesheet" type="text/css" href="//img.mobon.net/Frtb/css/frame_point.css">
 </head>
-<script>
-	$(document).ready(function () {
-		const classes = ['new', 'hot', 'up', 'down', 'hyphen'];
-		const classCounts = {
-			new: 0,
-			hot: 0,
-			up: 0,
-			down: 0,
-			hyphen: 0
-		};
-		const maxCount = 2;
-
-		$('ul li').find('.random').each(function () {
-			let randomClass;
-
-			do {
-				randomClass = classes[Math.floor(Math.random() * classes.length)];
-			} while (classCounts[randomClass] >= maxCount);
-
-			$(this).addClass(randomClass);
-			classCounts[randomClass]++;
-
-			if (randomClass === 'up' || randomClass === 'down') {
-				const randomNumber = Math.floor(Math.random() * 91) + 10;
-				$(this).append(`<span class="number">${randomNumber}</span>`);
-			}
-		});
-	});
-</script>
 <style>
 	/* font */
 	@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
@@ -224,6 +195,7 @@
 			</li>
 		</ul>
 	</div>
+	<script src="../js/dongwon.js"></script>
 </body>
 
 </html>
