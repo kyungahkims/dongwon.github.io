@@ -2,28 +2,34 @@ $(document).ready(function () {
 	const $balls = $('.ball');
 	const $baskets = $('.basket');
 
-	$balls.each(function (index) {
-		$(this).attr('id', `ball-${index}`);
+	$balls.draggable({
+		revert: "invalid",
+		cursor: "move",
+		helper: "clone",
+		start: function (event, ui) {
+			$(this).addClass("dragging");
+		},
+		stop: function (event, ui) {
+			$(this).removeClass("dragging");
+		}
 	});
 
-	$balls.attr('draggable', true);
+	$baskets.droppable({
+		accept: ".ball",
+		drop: function (event, ui) {
+			const $ballClone = ui.helper.clone();
+			$ballClone.css({
+				position: "absolute",
+				top: "0",
+				left: "0"
+			}).appendTo($(this));
+			ui.draggable.css({
+				visibility: "hidden"
+			});
 
-	$balls.on('dragstart', function (event) {
-		event.originalEvent.dataTransfer.setData('text/plain', $(this).attr('id'));
-	});
-
-	$baskets.on('dragover', function (event) {
-		event.preventDefault();
-	});
-
-	$baskets.on('drop', function (event) {
-		event.preventDefault();
-		const ballId = event.originalEvent.dataTransfer.getData('text/plain');
-		const $ball = $(`#${ballId}`);
-		if ($ball.length) {
-			$(this).append($ball);
+			$(this).css('border', 'none');
 			setTimeout(function () {
-				window.location.href = "https://www.naver.com/";
+				// window.location.href = "https://www.naver.com/";
 			}, 2000);
 		}
 	});
