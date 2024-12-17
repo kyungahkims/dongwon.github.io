@@ -26,9 +26,10 @@ $(document).ready(function () {
 			});
 
 			$(this).css('border', 'none');
+			$('.gift_title span').addClass('active').text('1등 선물세트, 품격을 더하다!');
 
 			setTimeout(function () {
-				// window.location.href = "https://www.naver.com/";
+				window.location.href = "https://www.naver.com/";
 			}, 2000);
 		}
 	});
