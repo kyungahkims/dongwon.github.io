@@ -126,6 +126,24 @@
 			background: url('../img/logo.png') no-repeat center/contain;
 			margin-right: 8px;
 		}
+
+		.mobon_reset .gift_title span.active {
+			animation: blink 1s infinite;
+		}
+
+		@keyframes blink {
+			0% {
+				opacity: 1;
+			}
+
+			30% {
+				opacity: 0.3;
+			}
+
+			100% {
+				opacity: 1;
+			}
+		}
 	</style>
 </head>
 
@@ -149,7 +167,7 @@
 				<div class="item"></div>
 			</div>
 		</div>
-		<h3 class="gift_title">참치를 선물상자에 담아보세요!</h3>
+		<h3 class="gift_title"><span>참치를 선물상자에 담아보세요!</span></h3>
 	</div>
 	<script src="../js/dongwon_playerball.js"></script>
 </body>
