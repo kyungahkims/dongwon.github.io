@@ -33,10 +33,10 @@ $(window).load(() => {
 
 			$(this).css('border', 'none');
 			$('.box_wrap_bg').addClass('active')
-			$('.gift_title span').addClass('active').text('1등 선물세트, 품격을 더하다!');
+			$('.gift_title span').addClass('active').text('1등 선물세트 완성!!');
 
 			setTimeout(function () {
-				//window.location.href = "https://www.naver.com/";
+				window.location.href = "https://www.dongwonmall.com/index.do";
 			}, 2000);
 		}
 	});
