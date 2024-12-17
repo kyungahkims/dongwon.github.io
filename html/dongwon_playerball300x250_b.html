@@ -43,8 +43,8 @@
 			height: 250px;
 			font-family: Pretendard;
 			color: #000;
-			overflow: hidden;
 			background: url('../img/img-background.png') no-repeat center/cover;
+			overflow: hidden;
 			padding: 15px;
 		}
 
@@ -66,11 +66,11 @@
 			font-weight: bold;
 			text-align: center;
 			color: #fbd900;
-			padding-bottom: 5px;
+			padding: 1px 0 5px;
 			background-color: #202020;
 		}
 
-		.box {
+		.box_group {
 			display: flex;
 			justify-content: center;
 			flex-wrap: wrap;
@@ -79,11 +79,16 @@
 			margin-top: 9px;
 		}
 
-		.basket {
-			position: relative;
+		.item_group {
 			display: flex;
-			justify-content: center;
+			flex-direction: column;
 			align-items: center;
+			row-gap: 4px;
+			margin: 2px 0 4px;
+		}
+
+		.box {
+			position: relative;
 			width: 47px;
 			height: 47px;
 			border-radius: 50%;
@@ -91,31 +96,18 @@
 			background-color: #000;
 		}
 
+		.box_full,
 		.item {
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			width: 47px;
-			row-gap: 4px;
-			margin-top: 2px;
-		}
-
-		.basket_over {
-			position: relative;
 			width: 47px;
 			height: 47px;
 			background: url('../img/img-tuna.png') no-repeat center/contain;
 		}
 
-		.ball {
-			position: relative;
-			width: 47px;
-			height: 47px;
-			background: url('../img/img-tuna.png') no-repeat center;
-			overflow: hidden;
+		.item {
+			cursor: pointer;
 		}
 
-		.mobon_reset .title {
+		.mobon_reset .gift_title {
 			display: flex;
 			align-items: center;
 			font-size: 16px;
@@ -127,7 +119,7 @@
 			padding: 11px 5px 11px 10px;
 		}
 
-		.mobon_reset .title::before {
+		.mobon_reset .gift_title::before {
 			content: "";
 			width: 42px;
 			height: 32px;
@@ -142,22 +134,22 @@
 		<div class="gift_set">
 			<div class="box_wrap">
 				<div class="box_name">TUNA</div>
-				<div class="box">
-					<div class="basket_over"></div>
-					<div class="basket_over"></div>
-					<div class="basket_over"></div>
-					<div class="basket"></div>
-					<div class="basket"></div>
-					<div class="basket"></div>
+				<div class="box_group">
+					<div class="box_full"></div>
+					<div class="box_full"></div>
+					<div class="box_full"></div>
+					<div class="box"></div>
+					<div class="box"></div>
+					<div class="box"></div>
 				</div>
 			</div>
-			<div class="item">
-				<div class="ball"></div>
-				<div class="ball"></div>
-				<div class="ball"></div>
+			<div class="item_group">
+				<div class="item"></div>
+				<div class="item"></div>
+				<div class="item"></div>
 			</div>
 		</div>
-		<h3 class="title">참치를 선물상자에 담아보세요!</h3>
+		<h3 class="gift_title">참치를 선물상자에 담아보세요!</h3>
 	</div>
 	<script src="../js/dongwon_playerball.js"></script>
 </body>
