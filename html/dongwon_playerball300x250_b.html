@@ -55,6 +55,7 @@
 		}
 
 		.box_wrap {
+			position: relative;
 			width: 207px;
 			height: 157px;
 			border: 5px solid #202020;
@@ -127,8 +128,9 @@
 			margin-right: 8px;
 		}
 
+		/* 이동 후 효과 */
 		.mobon_reset .gift_title span.active {
-			animation: blink 1s infinite;
+			animation: blink 2s;
 		}
 
 		@keyframes blink {
@@ -136,11 +138,65 @@
 				opacity: 1;
 			}
 
-			30% {
+			40% {
+				opacity: 1;
+			}
+
+			55% {
+				opacity: 0.3;
+			}
+
+			70% {
+				opacity: 1;
+			}
+
+			85% {
 				opacity: 0.3;
 			}
 
 			100% {
+				opacity: 1;
+			}
+		}
+
+		/* .box_wrap_bg.active {
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			background: url('../img/img-background.png') no-repeat center/cover;
+			z-index: 2;
+			animation: bg 1s;
+		}
+
+		@keyframes bg {
+			0% {
+				height: 0;
+			}
+
+			100% {
+				height: 100%;
+			}
+		} */
+
+		.box_wrap_bg.active {
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			background: url('../img/img-background.png') no-repeat center/cover;
+			z-index: 2;
+			animation: bg 1.5s forwards ease-in-out;
+			transform-origin: top;
+			transform-style: preserve-3d;
+		}
+
+		@keyframes bg {
+			0% {
+				transform: perspective(800px) rotateX(90deg);
+				opacity: 1;
+			}
+
+			100% {
+				transform: perspective(800px) rotateX(0deg);
 				opacity: 1;
 			}
 		}
@@ -151,13 +207,14 @@
 	<div class="mobon_reset">
 		<div class="gift_set">
 			<div class="box_wrap">
+				<div class="box_wrap_bg"></div>
 				<div class="box_name">TUNA</div>
 				<div class="box_group">
 					<div class="box_full"></div>
 					<div class="box_full"></div>
 					<div class="box_full"></div>
-					<div class="box"></div>
-					<div class="box"></div>
+					<div class="box_full"></div>
+					<div class="box_full"></div>
 					<div class="box"></div>
 				</div>
 			</div>
