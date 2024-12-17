@@ -1,8 +1,6 @@
 $(document).ready(function () {
-	const $balls = $('.ball');
-	const $baskets = $('.basket');
 
-	$balls.draggable({
+	$('.item').draggable({
 		revert: "invalid",
 		cursor: "move",
 		helper: "clone",
@@ -14,8 +12,8 @@ $(document).ready(function () {
 		}
 	});
 
-	$baskets.droppable({
-		accept: ".ball",
+	$('.box').droppable({
+		accept: ".item",
 		drop: function (event, ui) {
 			const $ballClone = ui.helper.clone();
 			$ballClone.css({
@@ -28,6 +26,7 @@ $(document).ready(function () {
 			});
 
 			$(this).css('border', 'none');
+
 			setTimeout(function () {
 				// window.location.href = "https://www.naver.com/";
 			}, 2000);
